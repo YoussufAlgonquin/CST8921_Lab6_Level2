@@ -5,7 +5,7 @@
 
 ---
 
-## Objective (in my own words)
+## Objective
 
 The goal of this lab is to replace the point-and-click portal workflow of the introductory static-hosting lab with a fully automated, code-driven deployment. Rather than toggling settings in the Azure portal and dragging files into a browser extension, every step is performed via the Azure SDK for Python. On top of that, the "static" site is extended with a real dynamic component: a visit counter served by an Azure Function, with the two sides connected over CORS. The result is the Jamstack architecture deployed entirely from code and delivered through Azure Front Door at the edge.
 
