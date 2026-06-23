@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Azure Functions local settings (contains connection strings)
+local.settings.json
+
+# Lab instruction file (not a deliverable)
+CST8921_Lab6_Level2_Static_Site_Code_First.md
+
+# Screenshots submitted separately with the report
+*.png
+*.jpg

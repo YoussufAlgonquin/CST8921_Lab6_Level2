@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CST8921 – Code-First Static Site</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; }
+    h1 { color: #0078d4; }
+    #counter-box { background: #f0f7ff; border: 1px solid #0078d4; border-radius: 8px; padding: 1rem 1.5rem; margin-top: 1.5rem; }
+    #count { font-weight: bold; font-size: 1.4rem; }
+    footer { margin-top: 2rem; font-size: 0.8rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Hello from a code-deployed static site</h1>
+  <p>Deployed via Azure SDK for Python — no portal clicks required.</p>
+
+  <div id="counter-box">
+    <p>Visits to this page: <span id="count">loading…</span></p>
+  </div>
+
+  <footer>CST8921 Lab 6 · Azure Front Door + Storage Static Website + Azure Functions</footer>
+
+  <script src="config.js"></script>
+  <script>
+    fetch(`${window.API_BASE}/api/visits`)
+      .then(r => r.json())
+      .then(d => { document.getElementById("count").textContent = d.count; })
+      .catch(() => { document.getElementById("count").textContent = "API unavailable"; });
+  </script>
+</body>
+</html>
